@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taş Kağıt Makas oyun</title>
+
+    <link rel="stylesheet" href="taşkağıtmakas css.css">
+
+
+</head>
+<body>
+    <link rel="stylesheet" href="taşkağıtmakas css.css">
+
+<div id="liste">
+    <img id="kagit" src="kagit.webp" class="demobir" data-id="0">
+    <img id="makas"src="makas.webp" class="demoiki" data-id="1">
+    <img id="tas" src="tas.webp" class="demouc" data-id="2">
+</div>
+
+<div id="pc-sonuc" >
+    <img src="" id="pc secim">
+</div>
+
+<div id="sonuc"></div>
+
+
+<script>
+
+var liste=["tas.webp","kagit.webp","makas.webp"];
+var tas=document.getElementById("tas");
+var kagit=document.getElementById("kagit");
+var makas=document.getElementById("makas");
+var pcsecim=document.getElementById("pc secim");
+var sonucbolumu=document.getElementById("sonuc");
+
+kagit.onclick=secimYap;
+makas.onclick=secimYap;
+tas.onclick=secimYap;
+
+function secimYap(){
+    var pc=rastgelesec();
+    var secim=this.dataset.id;
+
+if(pc==0 && secim==0)
+{
+sonuc="ikinizde aynı seçimi yaptınız";
+}
+else if(pc==0 && secim==1)
+{
+sonuc="Kazandın, makas kağıdı keser";
+}
+else if(pc==0 && secim==2)
+{
+sonuc="Kaybettin, kağıt taşı sarar";
+}
+else if(pc==1 && secim==0)
+{
+sonuc="Kaybettin, makas kağıdı keser";
+}
+else if(pc==1 && secim==1)
+{
+sonuc="ikinizde aynı seçimi yaptınız";
+}
+else if(pc==1 && secim==2)
+{
+sonuc="Kazandın, Taş makası kırar";
+}
+else if(pc==2 && secim==0)
+{
+sonuc="Kazandın, kağıt taşı sarar";
+}
+else if(pc==2 && secim==1)
+{
+sonuc="Kaybettin, Taş makası kırar";
+}
+else if(pc==2 && secim==2)
+{
+sonuc="ikinizde aynı seçimi yaptınız";
+}
+ 
+sonucbolumu.innerHTML=sonuc;
+}
+
+
+function rastgelesec(){
+var sayi= Math.round(Math.random()*2);
+pcsecim.src=liste[sayi]; 
+ 
+return sayi;
+}
+
+
+
+    </script>
+    
+</body>
+</html>

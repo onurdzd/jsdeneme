@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   <script>
+
+var sayilar=new Array(20);
+
+for(var i=0;i<sayilar.length;i++){
+
+    sayilar[i]=Math.floor(Math.random()*100);
+    document.write(sayilar[i],"<br />");
+}
+
+var min=100;
+var max=0;
+
+for(var a=0;a<sayilar.length;a++){
+if(min>sayilar[a]){
+    min=sayilar[a];
+}if(max<sayilar[a]){
+    max=sayilar[a];
+}
+}
+
+document.write("min: ",min," max: ",max);
+
+   </script> 
+</body>
+</html>

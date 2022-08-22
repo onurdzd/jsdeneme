@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+.tavlazarsecbuton:hover{
+
+border: 1px solid yellow;
+
+}
+
+
+</style>
+
+<body onload="rastgelezar()" style="background-color:#B2B3B2 ; border: 5px solid blue;width: 1525x;">
+
+<div id="zaralani" style="text-align: center;  position: relative; width: 750px;border-right: 5px solid blue;left:10px">
+    <br /><br /><div style="text-align: center; margin-bottom: 0px; position: relative;font-size: xx-large;">Tıkla Zar Seç Bol Şans:</div>
+    <img id="resim" src="zar1.png" style="width:150px ; height:150px;margin-top: 20px; cursor: pointer;"  onclick="rastgelezarsec()"> 
+    <div id="sonuc" style="text-align: center;  font-size: xx-large; position: relative;">  </div>
+    <div id="zaralani2" style="text-align: center; margin-bottom: 0px; position: relative;">
+    <br /><br /><div style="text-align: center; margin-bottom: 0px; position: relative;font-size: xx-large;">Seçilen Zar:
+        <span id="sonuc2" style="text-align: center;  font-size: xx-large; position: relative;"></span>
+        </div>
+    <img id="resim2" src=" " style="border:3px solid yellow; width:150px ; height:150px;margin-top: 0px; text-align: center ;cursor: pointer;" >
+    </div>
+
+<div id="zaralani2" style="position: absolute; left: 825px; top: 50px; width: 600px; ">
+    <button type="button" onclick="tavlazarsec()" style="font-size:x-large;background-color: cadetblue;" class="tavlazarsecbuton">Tıkla Tavla Zar Seç</button><br />
+    <br /><br /><br /><br />
+    <img id="resim3" src="zar1.png" style="width:150px ; height:150px;margin-top: 20px;">
+    <img id="resim4" src="zar1.png" style="width:150px ; height:150px;margin-top: 20px;">
+</div>
+
+    
+<script>
+
+var sayi=0;
+
+var zaman=setInterval(function rastgelezar(){
+    sayi=Math.round(Math.random()*5+1)
+    
+    document.getElementById("resim").src="zar"+sayi+".png";
+    },10);
+
+function rastgelezarsec(){
+    
+    document.getElementById("resim2").src="zar"+sayi+".png";
+    document.getElementById("sonuc2").innerHTML=sayi;
+    
+}
+
+
+function tavlazarsec(){
+    var sayibir=Math.round(Math.random()*5+1);
+    var sayiiki=Math.round(Math.random()*5+1);
+
+    document.getElementById("resim3").src="zar"+sayibir+".png";
+    document.getElementById("resim4").src="zar"+sayiiki+".png";
+
+}
+
+
+
+</script>
+
+
+    
+</body>
+</html>

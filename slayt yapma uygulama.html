@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+*{
+margin: 0px;
+}
+
+#slaytalan{
+margin: 50px auto;
+width:250px ;
+position: relative;
+overflow: hidden;
+border-radius: 3px;
+}
+
+#resim1{
+    position: relative;
+}
+
+.solokalan{
+position: absolute;  
+width: 20px;
+height: 150px;
+left:0px;
+top: 0px;  
+text-align: left;
+opacity: 0;
+
+}
+
+.sagokalan{
+position: absolute;    
+right: 0px;
+top: 0px;
+text-align: right;
+opacity: 0;
+width: 20px;
+height: 150px;
+}
+
+.leftarrow{
+    position: absolute;
+    top: 40px;
+    cursor: pointer;
+    transition: all .5s ease-in-out 0s;
+    width: 20px;
+    height: 20px;
+}
+
+.rightarrow{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin-top: 40px;
+    cursor: pointer;
+    transition: all .5s ease-in-out 0s;
+}
+
+.solokalan:hover{
+    opacity: 100;
+    
+}
+
+.sagokalan:hover{
+    opacity: 100;
+    
+}
+
+    </style>
+
+
+</head>
+<body >
+    
+   
+    <div id="slaytalan">
+        <img id="resim1" src="resim1.webp" width="250px" height="100px" >
+        <div class="solokalan"><img src="leftarrow.png" width="20px" height="20px" class="leftarrow" onclick="resimdegistir(-1)"></div>
+        <div class="sagokalan"><img src="rightarrow.jpg" width="20px" height="20px" class="rightarrow" onclick="resimdegistir(1)"></div>
+    </div>
+
+    <script>
+
+var resim1=document.getElementById("resim1");
+var resimsira=1;
+var toplamresim=3; //taş kağıt makas 3 adet
+
+function resimdegistir(deger){
+    resimsira=resimsira+deger;
+
+    if(resimsira>toplamresim){
+            resimsira=1;
+        }
+
+    if(resimsira<1){
+        resimsira=toplamresim;
+    }
+    resim1.src="resim"+resimsira+".webp";
+
+clearInterval(zaman);
+
+zaman=window.setInterval(function(){ //yeniden zamanlayıcı başlasın diye aşağıdakini kopyala yapıştır yaptık
+    resimsira=resimsira+1; //her 3 snde 1 resim değiştirecek
+    if(resimsira>toplamresim){
+    resimsira=1;
+    }
+    resim1.src="resim"+resimsira+".webp";
+    ;
+},1000);
+    
+ 
+}
+
+
+
+var zaman=window.setInterval(function(){
+        resimsira=resimsira+1; //her 3 snde 1 resim değiştirecek
+        if(resimsira>toplamresim){
+            resimsira=1;
+        }
+        resim1.src="resim"+resimsira+".webp";
+        ;
+      
+},1000);
+    
+   
+
+
+    </script>
+</body>
+</html>

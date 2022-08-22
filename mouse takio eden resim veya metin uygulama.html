@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>Bu yazının üzerindede gezebiliyor</div>
+    <div id="gezenalan"><img src="pic_bulbon.gif" height="100px" style="border:5px solid ;"></div>
+    <div id="gezenalaniki" style="color: red;">Ben geziyorum</div>
+
+    <script>
+
+var alangezdir=document.getElementById("gezenalan");
+alangezdir.style.position="absolute"; //alan gezilebilir oldu
+var alangezdiriki=document.getElementById("gezenalaniki");
+alangezdiriki.style.position="absolute";
+
+window.onmousemove=function (olay){
+    alangezdir.style.left=olay.clientX+ 100+"px"; //+ "px" mausun her hareketinde 1 px alangezdiri kaydırıyor.mouse yatayda her hareket ettiğinde
+    //clientx ile yataydaki koordinatını alangezdir resminin yatay koodinatı olarak atıyor.100px mousun uzağında duruyor
+    alangezdir.style.top=olay.clientY+ "px";
+    
+    alangezdiriki.style.left=olay.clientX+"px";
+    alangezdiriki.style.top=olay.clientY+100+ "px";
+
+
+}
+
+
+    </script>
+    
+</body>
+</html>

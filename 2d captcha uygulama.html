@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="captcharesimdegis()">
+    <div>Güvenlik kodu:</div><br />
+    <canvas id="guvenlikkodu" width="160px" height="50px"></canvas><br /><br />
+    <button onclick="captcharesimdegis()"> Captcha Yenile</button>
+
+
+<script>
+
+
+
+function captcharesimdegis(){
+    var islem;
+    var metin="";
+    islem=document.getElementById("guvenlikkodu").getContext("2d"); //canvas 2 boyutlu olduğu için
+    for(var i=0;i<6;i++){ //captcha 6 karakter olduğu için 
+
+        if(Math.round(Math.random())==0){
+            metin+=String.fromCharCode(48+9 *Math.random()); //48+9 char code ile alakalı .random sayı 57 ile çarpılacak
+            //The String.fromCharCode() method converts Unicode values to characters.
+        }else{
+            metin+=String.fromCharCode(65+25 *Math.random()); //random sayı 90 ile çarpılacak
+        }
+    }
+    islem.fillStyle="yellow"; //canvas ile alakalı.canvasın arka plan rengi
+    islem.fillRect(0,0,160,50); //canvas biçim özellikleri
+    islem.font="30px thoma"; //islem testinin yazı tipi
+    islem.strokeText(metin,24,34); //canvas metinin soldan 24px yukarıdan 34px boşluk
+}
+
+
+
+</script>
+
+</body>
+</html>

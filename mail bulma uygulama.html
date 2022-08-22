@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="icerik">JavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascript
+        JavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascript    
+        JavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascript
+        JavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascript
+        JavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascrip info@veiyoga.comtJavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascript
+        JavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascript
+        JavascriptJavascriptJavascriptJavascriptJavascript Edizdar@gmail.com JavascriptJavascriptJavascriptJavascriptJavascript
+    </div>
+    <br />
+    <div id="sonuc"></div>
+
+    
+    <script>
+
+var deger=document.getElementById("icerik").innerHTML;
+var cerceve=/[A-Z0-9a-z_.-]+@+[A-Z0-9a-z_.-]+\.+[A-Za-z]{2,3}/gim; //info@veiyoga.com u kelime kelime kodladı. en son yazdığı 2,3= en az 2 en fazla 3 defa 
+//paragrafta geçiyor demek.bu şekilde düzenli ifade aranabiliyor. g tüm satırda demek, i büyük küçük harf duyarlı. \ kaçırma operatörü
+var mail=deger.match(cerceve);
+document.getElementById("sonuc").innerHTML=mail;
+
+
+    </script>
+    
+</body>
+</html>

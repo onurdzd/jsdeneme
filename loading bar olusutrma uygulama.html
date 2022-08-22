@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="kapsamaalani" style="margin:0px auto;width:1000px;height: 500px;position: relative;">
+    <div id="baslik1" style="border:3px solid black;width:800px;margin:auto;text-align: center;margin: 30px auto;font-size: xx-large; margin-bottom: 10px;background-color: deepskyblue;font-weight: bolder; ">Personel Başarı % si</div>
+    <div id="icerikalani" style="border:3px solid black; width:800px; height: 400px;margin:20px auto;"> 
+        <div id="isim1" style="width: 100px; height: 25px;float:left;padding-top: 5px;">Onur Dizdar</div>
+        <div id="yuzde1" style="float:left;width: 700px;height: 25px;text-align: center;padding-top: 5px;background-color: aquamarine;"><div id="yuzdedegeri"></div></div>
+        <br /><br />
+        <div id="isim2" style="width: 100px; height: 25px;float:left;padding-top: 5px;">Erk Dizdar</div>
+        <div id="yuzde2" style="float:left;width: 700px;height: 25px;text-align: center;padding-top: 5px;background-color: aquamarine;"><div id="yuzdedegeri2"></div></div>
+    
+    </div>
+
+
+</div>
+
+
+    <script>
+var zaman=new Date();
+zaman.getDay
+
+var toplamalan=700;
+var yuzde1alan=document.getElementById("yuzde1");
+var yuzde1=50;
+var hesapla1=100/yuzde1;
+var boyanacakpiksel1=toplamalan/hesapla1; //alanın yarısı boyatacak şekilde formül uydurmuş
+var i=0;
+
+
+var zaman1=setInterval(function(){
+
+    
+    yuzde1alan.style.width=i +"px"
+    i=i+1;
+    if(i>=boyanacakpiksel1){
+    document.getElementById("yuzdedegeri").innerHTML="%" + yuzde1;
+    clearInterval(zaman1);
+ }
+},10)
+
+var yuzde2alan=document.getElementById("yuzde2");
+var yuzde2=90;
+var hesapla2=100/yuzde2;
+var boyanacakpiksel2=toplamalan/hesapla2; //alanın yarısı boyatacak şekilde formül uydurmuş
+var i=0;
+
+
+var zaman2=setInterval(function(){
+
+    
+    yuzde2alan.style.width=i +"px"
+    i=i+1;
+    if(i>=boyanacakpiksel2){
+    document.getElementById("yuzdedegeri2").innerHTML="%" + yuzde2;
+    clearInterval(zaman2);
+ }
+},10)
+
+
+
+
+    </script>
+    
+</body>
+</html>
