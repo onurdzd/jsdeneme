@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hesap Makinası</title>
+
+<link rel="stylesheet" href="hesap makinası self uygulama css.css">
+
+
+</head>
+
+<body style="background-color:rgb(179, 198, 245) ;">
+
+<div id="anaalan" class="anaalan">
+
+<div id="sonucalan"></div>
+
+<div><span id="bir" value=1 class="sayilar" onclick="document.getElementById('sonucalan').innerHTML+=1">1</span><span id="iki" value=2 class="sayilar" onclick="document.getElementById('sonucalan').innerHTML+=2">2</span><span id="uc" value=3 class="sayilar" onclick="document.getElementById('sonucalan').innerHTML+=3">3</span><span id="topla" class="islem" onclick="toplama()">Topla</span></div><br />
+<div><span id="dort" value=4 class="sayilar" onclick="document.getElementById('sonucalan').innerHTML+=4">4</span><span id="bes" value=5 class="sayilar" onclick="document.getElementById('sonucalan').innerHTML+=5">5</span><span id="alti" value=6 class="sayilar" onclick="document.getElementById('sonucalan').innerHTML+=6">6</span><span id="cikar" class="islem" onclick="cikarma()">Çıkar</span></div><br />
+<div><span id="yedi" value=7 class="sayilar" onclick="document.getElementById('sonucalan').innerHTML+=7">7</span><span id="sekiz" value=8 class="sayilar" onclick="document.getElementById('sonucalan').innerHTML+=8">8</span><span id="dokuz" value=9 class="sayilar" onclick="document.getElementById('sonucalan').innerHTML+=9">9</span><span id="carp" class="islem" onclick="carpma()">Çarp</span></div><br />
+<div><span id="sil" class="islem" style="margin-left:30px ;" onclick="document.getElementById('sonucalan').innerHTML=''">C</span><span id="sifir" value=0 class="sifir" onclick="document.getElementById('sonucalan').innerHTML+=0">0</span><span id="eşittir" class="islem" ;  onclick="esittir()">=</span><span id="böl" class="islem" style="margin-left:33px; font-size: x-large;" onclick="bolme()">Böl</span><span id="gerisil" class="gerisil" style="margin-left:10px ; border: 2px solid green;padding: 3px; text-align: center;font-size: x-large;" onclick="document.getElementById('sonucalan').innerHTML=document.getElementById('sonucalan').innerHTML.slice(0,-1)" >c-- </span></div>
+
+</div>
+
+
+<script>
+
+var islem=0;
+
+function toplama(){
+
+    document.getElementById('sonucalan').innerHTML+="+";
+    
+  
+  
+}
+
+function cikarma(){
+
+    document.getElementById('sonucalan').innerHTML+="-";
+    
+}
+
+function carpma(){
+
+    document.getElementById('sonucalan').innerHTML+="*";
+    
+}
+
+function bolme(){
+
+    document.getElementById('sonucalan').innerHTML+="/";
+    
+}
+
+function esittir(){
+    
+    document.getElementById('sonucalan').innerHTML=eval(document.getElementById('sonucalan').innerHTML);
+    
+    
+}
+
+
+</script>
+
+    
+</body>
+</html>
