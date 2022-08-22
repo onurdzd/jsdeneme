@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align:center ;background-color: mediumspringgreen;" ">
+
+<div id="saatkapsamalan" style="margin:250px auto ; font-size: xx-large; background-color:chocolate; width: 200px ; align-self: unset; border-radius: 25px;">
+    <button onclick="saniyecalistir()">Süreyi Başlat</button><br />
+    <button onclick="saniyedurdur()">Süreyi Durdur</button>
+    <div>Kronometre</div><br />
+    <span id="saatalan">00</span>
+    <span>:</span>
+    <span id="dakikaalan">00</span>
+    <span>:</span>
+    <span id="saniyealan">00</span>
+    </span>
+</div>
+
+
+<script>
+
+var saniye=0;
+var dakika=0;
+var saat=0;
+
+var zaman= setInterval(function saniyecalistir(){ //bunun başına başlat butonu için fonksiyon koyunca durdurma butonu işe yaramıyor.
+    document.getElementById("saniyealan").innerHTML=saniye;
+    document.getElementById("dakikaalan").innerHTML=dakika;
+    document.getElementById("saatalan").innerHTML=saat;
+    saniye=saniye+1;
+    if(saniye>59){
+        saniye=0;
+        dakika+=1;
+    }
+    if(dakika>5){
+        dakika=0;    
+        saat+=1;
+    }
+    if(saat>24){
+        saat=0;
+    }
+}
+,1000)
+
+function saniyedurdur(){
+    clearInterval(zaman);
+}
+
+
+</script>
+
+    
+</body>
+</html>
