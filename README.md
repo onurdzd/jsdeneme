@@ -1,0 +1,2 @@
+# jsdeneme 
+Deneme projeleridir
